@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #ffd300;
+            font-family: 'Orbitron', sans-serif;
+        }        
+        .col-custom {
+            flex: 0 0 22%;
+            max-width: 22%;
+            margin-left: 15px;  /* Añade un margen a la izquierda */
+        }
+        .btn-container {
+            padding: 0 2px;  /* Reduce the padding around the button */
+        }
+        .btn {
+            background-color: #222;
+            color: #fff;
+            border: 1px solid #fff;  /* Define el color y el ancho del borde */
+        }
+        .btn:hover {
+            color: #222;
+            background-color: #fff;
+            border-color: #fff;  /* Cambia el color del borde al pasar el ratón por encima */
+        }
+        th {
+            color: #ffd300;  /* Aquí cambiamos el color de las cabeceras de la tabla */
+        } 
+        td {
+            color: #fff;  /* Aquí cambiamos el color de las cabeceras de la tabla */
+        }         
+        th, td {
+            height: 10px; /* Modifica este valor según tus necesidades */
+            line-height: 10px; /* Asegúrate de que este valor sea igual al de la altura */
+        }
+
+        .table-bordered {
+            border: none;
+        }
+        .table-bordered th, .table-bordered td {
+            border: none;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #222;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #333;
+        }   
+        .highlighted {
+            background-color: #ffd300 !important;
+        }
+        .highlighted td {
+            color: #000 !important;  /* Cambia el color del texto a negro para cualquier celda dentro de un elemento con la clase 'highlighted' */
+        }
+        #marquee {
+            position: relative; 
+            white-space: nowrap; 
+            animation: marquee 20s linear infinite; 
+            font-size: 1.2em;  /* Ajusta este valor según tus necesidades */
+            color: #333 !important;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-custom" id="button-container">
+                <div style="display: flex; justify-content: center; align-items: center; height: 33px;">
+                   <b>SCHEDULES</b>
+                </div>
+                <!-- Los botones se generarán aquí con JavaScript -->
+            </div>                   
+            <div class="col">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">TARGET</th>
+                            <th style="width: 10%;">DIFF</th>
+                            <th style="width: 80%;">DESCRIPTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Las filas de la tabla serán añadidas aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: fixed; bottom: 0; width: 100%; background-color: #00f0ff; height: 20px; color: #222; font-size: 16px; line-height: 20px; overflow: hidden;">
+        <div id="marquee">
+            Aquí va tu texto desplazante...
+        </div>
+    </div>
+    
+
+    <script src="agenda.js"></script>
+
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+
+</body>
+</html>
