@@ -1,6 +1,6 @@
 // Crear la lista de tiempos
 var tiempos = [];
-for (var i = 8; i <= 18; i++) {
+for (var i = 8; i <= 23; i++) {
     for (var j = 0; j < 60; j += 15) {
         var horas = i.toString().padStart(2, '0');
         var minutos = j.toString().padStart(2, '0');
